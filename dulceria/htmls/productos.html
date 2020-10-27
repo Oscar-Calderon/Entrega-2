@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <title>Dulcería Cachupín - Productos</title>
+  <link rel="stylesheet" href="{% static 'CSS/estilo.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <link rel="shortcut icon" href="{% static 'Imgs/dulce2.png' %}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="{% static 'JS/Funciones.js' %}"></script>
+
+  <script>
+    $(function() {
+    $(".exp").on("click", function() {
+
+        if ($(".item").hasClass("active")) {
+            $(".item").removeClass("active");
+        }
+
+        else {
+            $(".item").addClass("active");
+        }
+
+    });
+});
+    </script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul class="menu">
+        <li class="exp"><a><span class="barra"></span></a></li>
+        <li class="logo"><a href="{% url 'inicio' %}">Dulceria Cachupín</a></li>
+        <li class="productos item"><a href="{% url 'productos' %}">Productos</a></li>
+        <li class="login item"><a href="{% url 'login' %}">Ingresar</a></li>
+        <li class="signup item"><a href="{% url 'registro' %}">Registrarse</a></li>
+      </ul>
+  </nav>
+  </header>
+
+  <div>
+    <img class="banner-dulces" src="{% static 'Imgs/banner-dulces.png' %}" alt="banner-dulces">
+  </div>
+
+
+
+  <section class="mensaje-productos">
+      <div class="contenido-productos col-sm-6">
+        <h4>En Dulceria Cachupin, trabajamos diariamente<br>
+          para asegurar la calidad de todos nuestros productos.</h4>
+      </div>
+      <div class="contenido-productos col-sm-6">
+        <h4>Te invitamos a conocer nuestra amplia variedad<br>
+          de productos, con un sin fín de sabores.</h4>
+      </div>
+  </section>
+
+    <div class="fondob">
+        <div class="col-md-6 col-productos">
+          <img class="img-productos rounded" src="{% static 'Imgs/alfajores.jpg' %}" alt="">
+          <button class="btn btn-outline-primary" onclick="nodisp()">Añadir al carro</button>
+        </div>
+        <div class="col-md-6 col-productos">
+          <img class="img-productos rounded" src="{% static 'Imgs/ligua.jpg' %}" alt="">
+          <button class="btn btn-outline-primary" onclick="nodisp()">Añadir al carro</button>
+        </div>
+        <div class="col-md-6 col-productos">
+          <img class="img-productos rounded" src="{% static 'Imgs/galletas.jpg' %}" alt="">
+          <button class="btn btn-outline-primary" onclick="nodisp()">Añadir al carro</button>
+        </div>
+        <div class="col-md-6 col-productos">
+          <img class="img-productos rounded" src="{% static 'Imgs/chocolates.jpg' %}" alt="">
+          <button class="btn btn-outline-primary" onclick="nodisp()">Añadir al carro</button>
+        </div>
+        <div class="col-md-6 col-productos">
+          <img class="img-productos rounded" src="{% static 'Imgs/bombones.jpg' %}" alt="">
+          <button class="btn btn-outline-primary" onclick="nodisp()">Añadir al carro</button>
+        </div>
+        <div class="col-md-6 col-productos">
+          <img class="img-productos rounded" src="{% static 'Imgs/golosinas.jpg' %}" alt="">
+          <button class="btn btn-outline-primary" onclick="nodisp()">Añadir al carro</button>
+        </div>
+        <div class="col-sm-12 col-productos">
+          <input type="button" class="btn btn-outline-primary" onclick="construccion()" value="Canasta">
+        </div>
+    </div>
+
+  <div>
+    <div class="col fondoa col-copyright">
+      <p class="copyright">© 2020 Dulceria Cachupin.</p>
+      <button class="btn-galleta btn btn-success" type="button" name="button" onclick="galleta()">Galleta de la fortuna</button>
+    </div>
+  </div>
+
+
+
+
+</body>
+
+</html>

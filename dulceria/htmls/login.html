@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Dulcería Cachupín - Ingreso</title>
+    <link rel="stylesheet" href="{% static 'CSS/estilo.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="shortcut icon" href="{% static 'Imgs/dulce2.png' %}">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <script src="{% static 'JS/Funciones.js' %}"></script>
+
+        <script>
+            $(function() {
+            $(".exp").on("click", function() {
+
+                if ($(".item").hasClass("active")) {
+                    $(".item").removeClass("active");
+                }
+
+                else {
+                    $(".item").addClass("active");
+                }
+
+            });
+        });
+            </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li class="exp"><a><span class="barra"></span></a></li>
+                <li class="logo"><a href="{% url 'inicio' %}">Dulceria Cachupín</a></li>
+                <li class="productos item"><a href="{% url 'productos' %}">Productos</a></li>
+                <li class="login item"><a href="{% url 'login' %}">Ingresar</a></li>
+                <li class="signup item"><a href="{% url 'registro' %}">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="fondor">
+        <div class="cont">
+            <h1 class="etiq"><kbd>Iniciar Sesión</kbd></h1>
+            <form action="login.html" method="POST">
+                <div class="formulario">
+                    <label class="etiq" for="rut">RUT:</label>
+                    <input class="col-sm-12 form-control" id="rut" type="text" required name="rut" placeholder="Rut" oninput="validaRut(this)">
+                    <label class="etiq" for="pw">Contraseña:</label>
+                    <input class="col-sm-12 form-control" id="pw" type="password" required name="cont" placeholder="Ingrese una contraseña" pattern=".{6,}">
+                        <input class="col-sm-12 btn btn-primary btn-lg" type="submit" value="Ingresar">
+                        <input class="col-sm-12 btn btn-danger btn-lg" type="reset" value="Borrar">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <div class="col fondoa col-copyright">
+          <p class="copyright">© 2020 Dulceria Cachupin.</p>
+          <button class="btn-galleta btn btn-success" type="button" name="button" onclick="galleta()">Galleta de la fortuna</button>
+        </div>
+      </div>
+</body>
+</html>
