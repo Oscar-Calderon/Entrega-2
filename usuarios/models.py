@@ -13,3 +13,12 @@ class Usuario(models.Model):
     fechaNacimiento = models.DateField(null=False)
     contrasena = models.CharField(max_length=50,null=False)
     tipoUsuario = models.ForeignKey(TipoUsuario,on_delete=models.CASCADE)
+class Producto(models.Model):
+    idProducto = models.CharField(max_length=4,primary_key=True)
+    nombre = models.CharField(max_length=100,null=False)
+    valor = models.IntegerField(null=False)
+class ItemCarrito(models.Model):
+    idItem = models.IntegerField(primary_key=True)
+    idProducto = models.ForeignKey(Producto,on_delete=models.CASCADE)
+    rut = models.ForeignKey(Usuario,on_delete=models.CASCADE)
+    cantidad = models.IntegerField(null=False)

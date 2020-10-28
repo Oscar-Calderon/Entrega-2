@@ -12,3 +12,6 @@ def login(request):
 
 def productos(request):
     return render(request, 'productos.html', {})
+
+def recuperar(request):
+    return render(request, 'recuperar.html', {})
