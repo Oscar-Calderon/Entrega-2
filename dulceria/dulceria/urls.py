@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from . import views
+import appdulceria.views
+from dulceria import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +25,5 @@ urlpatterns = [
     path('login',views.login,name='login'),
     path('productos',views.productos,name='productos'),
     path('recuperar',views.recuperar,name='recuperar'),
+    path('usuario',appdulceria.views.usuario,name='usuario')
 ]
