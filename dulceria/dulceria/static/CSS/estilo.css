@@ -1,0 +1,316 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fffee4;
+}
+
+header{
+    background-color: #C41524;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.negro{
+    color: rgb(43, 43, 87);
+}
+
+.menu{
+    display: flex;
+    overflow: hidden;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    justify-items: flex-end;
+}
+
+.logo{
+    padding: 0;
+    justify-self: flex-start;
+    order: -1;
+
+}
+
+.logo a:hover{
+    animation-name: navilogo;
+    animation-duration: 0.5s;
+    background-color: #6e0b13;
+}
+
+.menu li{
+    padding: 0;
+    margin: 0;
+    float: right;
+    white-space: nowrap;
+}
+
+ul {
+    list-style-type: none;
+  }
+
+.menu li a{
+    display: block;
+    color: #fffee4;
+    text-align: center;
+    padding: 16px;
+    margin: 0;
+    text-decoration: none;
+}
+
+.carousel-inner img{
+    width: 100%;
+    height: 100%;
+}
+
+.productos a:hover{
+    background-color: #fffee4;
+    color: #C41524;
+    animation-name: navi;
+    animation-duration: 0.5s;
+}
+
+.login{
+    background-color: rgb(28, 116, 199);
+    color: #fffee4;
+}
+
+.login a:hover{
+    background-color: #fffee4;
+    color: rgb(28, 116, 199);
+    animation-name: navilog;
+    animation-duration: 0.5s;
+}
+
+.signup{
+    background-color: rgb(224, 165, 0);
+    color: #fffee4;
+}
+
+.signup a:hover{
+    background-color: #fffee4;
+    color: rgb(224, 165, 0);
+    animation-name: navisign;
+    animation-duration: 0.5s;
+}
+
+.imgmid{
+    width: 100%;
+    height: 100%;
+}
+
+.nopad{
+    padding: 0;
+    margin: 0;
+}
+
+.fondoa{
+    background-color: rgb(28, 116, 199);
+    color: #fffee4;
+    margin: 0;
+    padding: 1em;
+    display: flex;
+    overflow: hidden;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.fondob{
+    background-color:#fffee4;
+    color: rgb(27, 27, 87);
+    margin: 0;
+    padding: 1em;
+    display: flex;
+    overflow: hidden;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Mobile */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .exp {
+    order: 1;
+  }
+  .item {
+    width: 100%;
+    text-align: center;
+    order: 3;
+    display: none;
+  }
+  .item.active {
+    display: block;
+  }
+
+  /* Navbar Toggle */
+  .exp {
+    cursor:pointer;
+  }
+  .barra {
+    background:  #fffee4;
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    width: 18px;
+  }
+  .barra:before,
+  .barra:after {
+    background:  #fffee4;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+  .barra:before {
+    top: 5px;
+  }
+  .barra:after {
+    top: -5px;
+  }
+
+
+/* Pagina Productos */
+
+.banner-dulces{
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.mensaje-productos{
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2em;
+}
+
+.img-productos{
+  width: 60%;
+}
+
+.col-productos{
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+}
+
+
+.col-copyright{
+  padding-top: 10px;
+}
+
+.formulario{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2em;
+    background-color: rgba(24, 20, 37, 0.5);
+    border-radius: 25px;
+
+}
+
+.cont{
+    padding: 3em;
+}
+.campo{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.fondor{
+    padding: 0;
+    margin: 0;
+    background: url('/static/Imgs/screen.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.fondor2{
+    padding: 0;
+    margin: 0;
+    background: url('/static/Imgs/fondor2.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.etiq{
+    color: seashell;
+    font-weight: 600;
+}
+
+.botones{
+    display: block;
+    justify-content: space-around;
+}
+
+
+.btn-galleta{
+  background-color: #fffee4;
+  font-size: 15px;
+}
+/* PC */
+@media all and (min-width: 768px) {
+    .item {
+        display: block;
+        width: auto;
+    }
+    .exp {
+        display: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+    }
+}
+
+/*Animaciones*/
+@keyframes navi{
+    from {background-color: #C41524;
+    color: #fffee4}
+    to {background-color: #fffee4;
+    color:  #C41524}
+  }
+
+@keyframes navilog{
+    from {background-color: rgb(28, 116, 199);
+    color: #fffee4}
+    to {background-color: #fffee4;
+    color:  rgb(28, 116, 199)}
+}
+
+@keyframes navisign{
+    from {background-color: rgb(224, 165, 0);
+    color: #fffee4}
+    to {background-color: #fffee4;
+    color:  rgb(224, 165, 0)}
+}
+
+@keyframes navilogo{
+    from {background-color: #C41524;}
+        to {background-color:  #6e0b13;}
+}
