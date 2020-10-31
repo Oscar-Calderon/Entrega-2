@@ -15,3 +15,9 @@ def productos(request):
 
 def recuperar(request):
     return render(request, 'recuperar.html', {})
+
+def gestion_usuarios(request):
+    return render(request, 'gestion_usuarios.html', {})
+
+def form(request):
+    return render(request, 'form.html', {})

@@ -228,12 +228,41 @@ ul {
 
 }
 
+.instancia_usu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2em;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+
+}
+
+.info_usu{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.botones{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .cont{
     padding: 3em;
+    display: flex;
+    flex-wrap: wrap;
 }
 .campo{
     margin-top: 2em;
     margin-bottom: 2em;
+}
+
+.space-btn{
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .fondor{
@@ -250,6 +279,16 @@ ul {
     padding: 0;
     margin: 0;
     background: url('/static/Imgs/fondor2.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.fondo_gestion{
+    padding: 0;
+    margin: 0;
+    background: url('/static/Imgs/nubesDulce.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
