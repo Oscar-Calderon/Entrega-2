@@ -6,4 +6,4 @@
              
      -en cmd: ejecutar "py manage.py migrate"
              
-     -script sql: ejecutar el script sql adjuntado en el proyecto (se llama "")
+     -script sql: ejecutar el script sql adjuntado en el proyecto (se llama "Script BD (cachupin).txt")
