@@ -48,8 +48,10 @@
     </header>
     <div class="fondor">
         <div class="cont">
-            <h1 class="etiq"><kbd>Iniciar Sesión</kbd></h1>
-            <form action="login.html" method="POST">
+            <h1 class="etiq"><kbd>Inicio de Sesión</kbd></h1>
+        </div>
+        <form action="login.html" method="POST">
+            <div class="cont">
                 <div class="formulario">
                     <label class="etiq" for="rut">RUT:</label>
                     <input class="col-sm-12 form-control" id="rut" type="text" required name="rut" placeholder="Rut" oninput="validaRut(this)">
@@ -59,8 +61,8 @@
                     <input class="col-sm-12 btn btn-danger btn-lg" type="reset" value="Borrar">
                     <a class="col-sm-12 btn btn-warning btn-lg" href="{% url 'recuperar' %}">¿Olvidaste tu contraseña?</a>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 
     <div>

@@ -50,17 +50,20 @@
     <div class="fondor2">
         <div class="cont">
             <h1 class="etiq"><kbd>Recuperar Contraseña</kbd></h1>
-            <form action="login.html" method="POST">
-                <div class="formulario">
-                    <label class="etiq" for="rut">RUT:</label>
-                    <input class="col-sm-12 form-control" id="rut" type="text" required name="rut" placeholder="Rut" oninput="validaRut(this)">
-                    <label class="etiq" for="pw">Fecha de Nacimiento:</label>
-                    <input class="col-sm-12 form-control" id="pw" type="password" required name="cont" placeholder="Ingrese una contraseña" pattern=".{6,}">
-                    <input class="col-sm-12 btn btn-primary btn-lg" type="submit" value="Ingresar">
-                    <input class="col-sm-12 btn btn-danger btn-lg" type="reset" value="Borrar">
+        </div>
+            <form action="recuperar.html" method="POST">
+                <div class="cont">
+                    <div class="formulario">
+                        <label class="etiq" for="rut">RUT:</label>
+                        <input class="col-sm-12 form-control" id="rut" type="text" required name="rut" placeholder="Rut" oninput="validaRut(this)">
+                        <label class="etiq" for="pw">Fecha de Nacimiento:</label>
+                        <input class="col-sm-12 form-control" id="pw" type="password" required name="cont" placeholder="Ingrese una contraseña" pattern=".{6,}">
+                        <input class="col-sm-12 btn btn-primary btn-lg" type="submit" value="Ingresar">
+                        <input class="col-sm-12 btn btn-danger btn-lg" type="reset" value="Borrar">
+                    </div>
                 </div>
             </form>
-        </div>
+        
     </div>
     <div>
         <div class="col fondoa col-copyright">

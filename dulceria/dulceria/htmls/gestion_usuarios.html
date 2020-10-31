@@ -50,12 +50,15 @@
     </header>
 
     <div class="fondo_gestion">
+        <div class="cont">
+            <h1 class="etiq"><kbd>Listado de Usuarios</kbd></h1>
+        </div>
             {% for cli in clientes %}
             <div class="cont">
                 <div class="col-sm-12 instancia_usu">
                     <div class="col-sm-12 info_usu">
                         <section class="col-sm-6">
-                            <h1>{{ cli.nombre }}</h1>
+                            <h1>{{ cli.nombre }} {{ cli.apellido_paterno }} {{ cli.apellido_materno }}</h1>
                             <h2>{{ cli.rut }}</h1>
                         </section>
                         <div class="col-sm-6 botones">
