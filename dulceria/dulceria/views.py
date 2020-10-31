@@ -18,3 +18,6 @@ def recuperar(request):
 
 def gestion_usuarios(request):
     return render(request, 'gestion_usuarios.html', {})
+
+def modificar_usuario(request):
+    return render(request, 'modificar_usuario.html', {})

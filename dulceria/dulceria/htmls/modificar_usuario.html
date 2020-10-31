@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>Dulcería Cachupín - Gestión de Usuarios</title>
+    <title>Dulcería Cachupín - Modificar Usuario</title>
 
     <link rel="stylesheet" href="{% static 'CSS/estilo.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -51,24 +51,8 @@
 
     <div class="fondo_gestion">
         <div class="cont">
-            <h1 class="etiq"><kbd>Listado de Usuarios</kbd></h1>
+            <h1 class="etiq"><kbd>Modificar Usuario</kbd></h1>
         </div>
-            {% for cli in clientes %}
-            <div class="cont">
-                <div class="col-sm-12 panel_blanco">
-                    <div class="col-sm-12 info_usu">
-                        <section class="col-sm-6">
-                            <h1>{{ cli.nombre }} {{ cli.apellido_paterno }} {{ cli.apellido_materno }}</h1>
-                            <h2>{{ cli.rut }}</h1>
-                        </section>
-                        <div class="col-sm-6 botones">
-                            <a class="col-sm-12 btn btn-primary space-btn" href="/editar/{{cli.rut}}">Modificar</a>
-                            <a class="col-sm-12 btn btn-danger space-btn" href="/eliminar/{{cli.rut}}">Eliminar</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
     </div>
 
     <div>

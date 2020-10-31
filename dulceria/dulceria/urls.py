@@ -27,6 +27,7 @@ urlpatterns = [
     path('recuperar/',views.recuperar,name='recuperar'),
     path('usuario/',appdulceria.views.usuario,name='usuario'),
     path('gestion_usuarios/',views.gestion_usuarios,name='gestion_usuarios'),
-    path('modificar/{{usu.rut}}',appdulceria.views.modificar,name='modificar'),
-    path('clientes/',appdulceria.views.clientes)
+    path('editar/<rut>/',appdulceria.views.editar),
+    path('clientes/',appdulceria.views.clientes),
+    path('eliminar/<rut>/',appdulceria.views.eliminar)
 ]
