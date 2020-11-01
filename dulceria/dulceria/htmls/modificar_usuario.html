@@ -53,6 +53,42 @@
         <div class="cont">
             <h1 class="etiq"><kbd>Modificar Usuario</kbd></h1>
         </div>
+        <form action="/modificar/{{rut}}/" method="POST">
+            {% csrf_token %}
+            <div class="cont">
+                <div class="panel_blanco">
+                    
+                    <div class="col-sm-12">
+                        <h1>Rut: {{ form.rut }}</h1>
+                    </div>
+                    <div class="col-sm-12">
+                        <h1>Nombre: {{ form.nombre }}</h1>
+                    </div>
+                    <div class="col-sm-12">
+                        <h1>Apellido Paterno: {{ form.apellido_paterno }}</h1>
+                    </div>
+                    <div class="col-sm-12">
+                        <h1>Apellido Materno: {{ form.apellido_materno }}</h1>
+                    </div>
+                    <div class="col-sm-12">
+                        <h1>Nickname: {{ form.nick }}</h1>
+                    </div>
+                    <div class="col-sm-12">
+                        <h1>Correo: {{ form.correo }}</h1>
+                    </div>
+                    <div class="col-sm-12">
+                        <h1>Fecha Nacimiento: {{ form.fecha_nacimiento }}</h1>
+                    </div>
+                    <div class="col-sm-12">
+                        <h1>Contraseña: {{ form.contrasena }}</h1>
+                    </div>
+                    <div class="col-sm-12">
+                        <h1>Tipo Usuario: {{ form.tipoUsuario }}</h1>
+                    </div>
+                    <input class="col-sm-12 btn btn-primary btn-lg" type="submit" value="Confirmar">
+                </div>
+            </div>
+        </form>
     </div>
 
     <div>

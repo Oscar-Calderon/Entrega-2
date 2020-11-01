@@ -23,18 +23,19 @@ def editar(request,rut):
     form = UsuarioForm(instance=cli)
     return render(request,'modificar_usuario.html',{'form':form,'rut':cli.rut})
 
-'''def modificar(request,rut):
+def modificar(request,rut):
+    cli = Usuario.objects.get(rut=rut)
     if request.method == "POST":
-        usuario_f = Usuario(rut = request.POST['rut'],
-                            nombre = request.POST['nombre'],
-                            apellido_paterno = request.POST['apellidoP'],
-                            apellido_materno = request.POST['apellidoM'],
-                            nick = request.POST['nick'],
-                            correo = request.POST['correo'],
-                            fecha_nacimiento = request.POST['fecha'],
-                            contrasena = request.POST['contrasena']
-                            )
-        usuario_f.save()'''
+        form = UsuarioForm(request.POST, instance=cli)
+        if form.is_valid():
+            try:
+                form.save()
+                redirect('/clientes')
+            except:
+                pass
+    l_clientes = Usuario.objects.all()
+    form = UsuarioForm()
+    return render(request,'gestion_usuarios.html',{'form':form, 'clientes':l_clientes})
 
 def eliminar(request, rut):
     cli = Usuario.objects.get(rut=rut)

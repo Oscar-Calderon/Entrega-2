@@ -28,6 +28,7 @@ urlpatterns = [
     path('usuario/',appdulceria.views.usuario,name='usuario'),
     path('gestion_usuarios/',views.gestion_usuarios,name='gestion_usuarios'),
     path('editar/<rut>/',appdulceria.views.editar),
+    path('modificar/<rut>/',appdulceria.views.modificar),
     path('clientes/',appdulceria.views.clientes),
     path('eliminar/<rut>/',appdulceria.views.eliminar)
 ]
