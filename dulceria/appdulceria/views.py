@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from appdulceria.forms import UsuarioForm
+from appdulceria.forms import UsuarioForm, EditarForm, ContrasenaForm, RutForm
 from appdulceria.models import Usuario
 # Create your views here.
 
@@ -26,7 +26,7 @@ def editar(request,rut):
 def modificar(request,rut):
     cli = Usuario.objects.get(rut=rut)
     if request.method == "POST":
-        form = UsuarioForm(request.POST, instance=cli)
+        form = EditarForm(request.POST, instance=cli)
         if form.is_valid():
             try:
                 form.save()
@@ -43,6 +43,24 @@ def eliminar(request, rut):
     l_clientes = Usuario.objects.all()
     form = UsuarioForm()
     return render(request,'gestion_usuarios.html',{'form':form,'clientes':l_clientes})
+
+def editar_pass(request):
+    cli_pass = Usuario(rut = request.POST['rut'])
+    cli = Usuario.objects.get(rut=cli_pass.rut)
+    form = ContrasenaForm(instance=cli)
+    return render(request,'cambiar_pass.html',{'form':form,'cli':cli})
+
+def modificar_pass(request,rut):
+    cli = Usuario.objects.get(rut=rut)
+    if request.method == "POST":
+        form = ContrasenaForm(request.POST, instance=cli)
+        if form.is_valid():
+            try:
+                form.save()
+                redirect('/login')
+            except:
+                pass
+    return render(request,'login.html')
 
 def clientes(request):
     form = UsuarioForm()

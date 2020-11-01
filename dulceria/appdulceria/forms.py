@@ -6,7 +6,17 @@ class UsuarioForm(forms.ModelForm):
         model = Usuario
         fields = "__all__"
 
-'''class EditarForm(forms.ModelForm):
+class EditarForm(forms.ModelForm):
     class Meta:
         model = Usuario
-        fields = '''
+        fields = ['nombre', 'apellido_paterno', 'apellido_materno', 'nick', 'correo', 'fecha_nacimiento', 'contrasena', 'tipoUsuario']
+
+class ContrasenaForm(forms.ModelForm):
+    class Meta:
+        model = Usuario
+        fields = ['contrasena']
+
+class RutForm(forms.ModelForm):
+    class Meta:
+        model = Usuario
+        fields = ['rut']
