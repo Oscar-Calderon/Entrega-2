@@ -10,26 +10,25 @@
 
   <link rel="shortcut icon" href="{% static 'Imgs/dulce2.png' %}">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/618d78ba24.js" crossorigin="anonymous"></script>
   <script src="{% static 'JS/Funciones.js' %}"></script>
 
   <script>
     $(function() {
-    $(".exp").on("click", function() {
+      $(".exp").on("click", function() {
 
         if ($(".item").hasClass("active")) {
-            $(".item").removeClass("active");
+          $(".item").removeClass("active");
+        } else {
+          $(".item").addClass("active");
         }
 
-        else {
-            $(".item").addClass("active");
-        }
-
+      });
     });
-});
-    </script>
+  </script>
 </head>
 
 <body>
@@ -42,7 +41,7 @@
         <li class="login item"><a href="{% url 'login' %}">Ingresar</a></li>
         <li class="signup item"><a href="{% url 'registro' %}">Registrarse</a></li>
       </ul>
-  </nav>
+    </nav>
   </header>
 
   <div>
@@ -52,18 +51,174 @@
 
 
   <section class="mensaje-productos">
-      <div class="contenido-productos col-sm-6">
-        <h4>En Dulceria Cachupin, trabajamos diariamente<br>
-          para asegurar la calidad de todos nuestros productos.</h4>
-      </div>
-      <div class="contenido-productos col-sm-6">
-        <h4>Te invitamos a conocer nuestra amplia variedad<br>
-          de productos, con un sin fín de sabores.</h4>
-      </div>
+    <div class="contenido-productos col-sm-6">
+      <h4>En Dulceria Cachupin, trabajamos diariamente<br>
+        para asegurar la calidad de todos nuestros productos.</h4>
+    </div>
+    <div class="contenido-productos col-sm-6">
+      <h4>Te invitamos a conocer nuestra amplia variedad<br>
+        de productos, con un sin fín de sabores.</h4>
+    </div>
   </section>
 
-    <div class="fondob">
-        <div class="col-md-6 col-productos">
+  <div class="fondob">
+      {% for prod in productos %}
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+          <div class="card">
+            <img class="card-img" src="{% static 'Imgs/alfajores.jpg' %}" alt="">
+            <!-- <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans"> -->
+            <div class="card-body">
+              <h4 class="card-title">{{ prod.nombre}}</h4>
+              <p class="card-text">
+                DESCRIPCION </p>
+              <div class="buy d-flex justify-content-between align-items-center">
+                <div class="price text-success">
+                  <h5 class="mt-4">$125</h5>
+                </div>
+                <a href="#" class="btn btn-danger mt-3"><i class="fas fa-shopping-cart"></i> Añadir al carro</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    {% endfor%}
+  </div>
+
+
+  <div class="fondob">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+          <div class="card">
+            <img class="card-img" src="{% static 'Imgs/alfajores.jpg' %}" alt="">
+            <!-- <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans"> -->
+            <div class="card-body">
+              <h4 class="card-title">Vans Sk8-Hi MTE Shoes</h4>
+              <p class="card-text">
+                DESCRIPCION </p>
+              <div class="buy d-flex justify-content-between align-items-center">
+                <div class="price text-success">
+                  <h5 class="mt-4">$125</h5>
+                </div>
+                <a href="#" class="btn btn-danger mt-3"><i class="fas fa-shopping-cart"></i> Añadir al carro</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+          <div class="card">
+            <img class="card-img" src="{% static 'Imgs/ligua.jpg' %}" alt="">
+            <!-- <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans"> -->
+            <div class="card-body">
+              <h4 class="card-title">Vans Sk8-Hi MTE Shoes</h4>
+              <p class="card-text">
+                DESCRIPCION</p>
+              <div class="buy d-flex justify-content-between align-items-center">
+                <div class="price text-success">
+                  <h5 class="mt-4">$125</h5>
+                </div>
+                <a href="#" class="btn btn-danger mt-3"><i class="fas fa-shopping-cart"></i> Añadir al carro</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+          <div class="card">
+            <img class="card-img" src="{% static 'Imgs/galletas.jpg' %}" alt="">
+            <!-- <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans"> -->
+            <div class="card-body">
+              <h4 class="card-title">Vans Sk8-Hi MTE Shoes</h4>
+              <p class="card-text">
+                DESCRIPCION </p>
+              <div class="buy d-flex justify-content-between align-items-center">
+                <div class="price text-success">
+                  <h5 class="mt-4">$125</h5>
+                </div>
+                <a href="#" class="btn btn-danger mt-3"><i class="fas fa-shopping-cart"></i> Añadir al carro</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="fondob">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+          <div class="card">
+            <img class="card-img" src="{% static 'Imgs/chocolates.jpg' %}" alt="">
+            <!-- <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans"> -->
+            <div class="card-body">
+              <h4 class="card-title">Vans Sk8-Hi MTE Shoes</h4>
+              <p class="card-text">
+                DESCRIPCION </p>
+              <div class="buy d-flex justify-content-between align-items-center">
+                <div class="price text-success">
+                  <h5 class="mt-4">$125</h5>
+                </div>
+                <a href="#" class="btn btn-danger mt-3"><i class="fas fa-shopping-cart"></i> Añadir al carro</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+          <div class="card">
+            <img class="card-img" src="{% static 'Imgs/bombones.jpg' %}" alt="">
+            <!-- <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans"> -->
+            <div class="card-body">
+              <h4 class="card-title">Vans Sk8-Hi MTE Shoes</h4>
+              <p class="card-text">
+                DESCRIPCION</p>
+              <div class="buy d-flex justify-content-between align-items-center">
+                <div class="price text-success">
+                  <h5 class="mt-4">$125</h5>
+                </div>
+                <a href="#" class="btn btn-danger mt-3"><i class="fas fa-shopping-cart"></i> Añadir al carro</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+          <div class="card">
+            <img class="card-img" src="{% static 'Imgs/golosinas.jpg' %}" alt="">
+            <!-- <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans"> -->
+            <div class="card-body">
+              <h4 class="card-title">Vans Sk8-Hi MTE Shoes</h4>
+              <p class="card-text">
+                DESCRIPCION </p>
+              <div class="buy d-flex justify-content-between align-items-center">
+                <div class="price text-success">
+                  <h5 class="mt-4">$125</h5>
+                </div>
+                <a href="#" class="btn btn-danger mt-3"><i class="fas fa-shopping-cart"></i> Añadir al carro</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+    <!-- VENTANA DE PRODUCTOS ANTERIOR -->
+    <!-- <div class="col-md-6 col-productos">
           <img class="img-productos rounded" src="{% static 'Imgs/alfajores.jpg' %}" alt="">
           <button class="btn btn-outline-primary" onclick="nodisp()">Añadir al carro</button>
         </div>
@@ -89,8 +244,8 @@
         </div>
         <div class="col-sm-12 col-productos">
           <input type="button" class="btn btn-outline-primary" onclick="construccion()" value="Canasta">
-        </div>
-    </div>
+        </div> -->
+
 
   <div>
     <div class="col fondoa col-copyright">
