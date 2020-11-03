@@ -9,7 +9,14 @@ class UsuarioForm(forms.ModelForm):
 class EditarForm(forms.ModelForm):
     class Meta:
         model = Usuario
-        fields = ['nombre', 'apellido_paterno', 'apellido_materno', 'nick', 'correo', 'fecha_nacimiento', 'contrasena', 'tipoUsuario']
+        fields = ['nombre',
+                'apellido_paterno',
+                'apellido_materno',
+                'nick',
+                'correo',
+                'fecha_nacimiento',
+                'contrasena',
+                'tipoUsuario']
 
 class ContrasenaForm(forms.ModelForm):
     class Meta:

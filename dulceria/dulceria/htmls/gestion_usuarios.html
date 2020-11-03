@@ -53,6 +53,37 @@
         <div class="cont">
             <h1 class="etiq"><kbd>Listado de Usuarios</kbd></h1>
         </div>
+        <form method="GET">
+            <div class="cont">
+                <div class="col-sm-12 panel_blanco">
+                    <div class="col-sm-4 centrado">
+                        <h5>Rut:</h5>
+                        {{ cli_filtro.form.rut }}
+                        <h5>NickName:</h5>
+                        {{ cli_filtro.form.nick }}
+                        <h5>Correo:</h5>
+                        {{ cli_filtro.form.correo }}
+                    </div>
+                    <div class="col-sm-4 centrado">
+                        <h5>Nombre:</h5>
+                        {{ cli_filtro.form.nombre }}
+                        <h5>Apellido Paterno:</h5>
+                        {{ cli_filtro.form.apellido_paterno }}
+                        <h5>Apellido Materno:</h5>
+                        {{ cli_filtro.form.apellido_materno }}
+                    </div>
+                    <div class="col-sm-4 centrado">
+                        <h5>Fecha Nacimiento (Inicio):</h5>
+                        {{ cli_filtro.form.fecha_n_inicio }}
+                        <h5>Fecha Nacimiento (Termino):</h5>
+                        {{ cli_filtro.form.fecha_n_termino }}
+                        <h5>Tipo De Usuario:</h5>
+                        {{ cli_filtro.form.tipoUsuario }}
+                    </div>
+                    <input class="col-sm-12 btn btn_primary" type="submit" value="Buscar">
+                </div>
+            </div>
+        </form>
             {% for cli in clientes %}
             <div class="cont">
                 <div class="col-sm-12 panel_blanco">

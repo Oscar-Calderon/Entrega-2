@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from appdulceria.forms import UsuarioForm, EditarForm, ContrasenaForm, RutForm
-from appdulceria.models import Usuario
-# Create your views here.
+from appdulceria.models import Usuario 
+from appdulceria.filters import UsuarioFiltro
 
 def usuario(request):
     if request.method == "POST":
@@ -35,7 +35,9 @@ def modificar(request,rut):
                 pass
     l_clientes = Usuario.objects.all()
     form = UsuarioForm()
-    return render(request,'gestion_usuarios.html',{'form':form, 'clientes':l_clientes})
+    cli_filtro = UsuarioFiltro(request.GET, queryset=l_clientes)
+    l_clientes = cli_filtro.qs
+    return render(request,'gestion_usuarios.html',{'form':form, 'clientes':l_clientes,'cli_filtro':cli_filtro})
 
 def eliminar(request, rut):
     cli = Usuario.objects.get(rut=rut)
@@ -65,4 +67,7 @@ def modificar_pass(request,rut):
 def clientes(request):
     form = UsuarioForm()
     l_clientes = Usuario.objects.all()
-    return render(request,'gestion_usuarios.html',{'form':form,'clientes':l_clientes})
+
+    cli_filtro = UsuarioFiltro(request.GET, queryset=l_clientes)
+    l_clientes = cli_filtro.qs
+    return render(request,'gestion_usuarios.html',{'form':form,'clientes':l_clientes,'cli_filtro':cli_filtro})

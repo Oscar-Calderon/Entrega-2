@@ -244,6 +244,11 @@ ul {
     align-items: center;
 }
 
+.centrado{
+    display: flex;
+    justify-content: center;
+}
+
 .botones{
     display: flex;
     flex-wrap: wrap;
